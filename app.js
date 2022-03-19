@@ -1,5 +1,6 @@
 const express = require('express');
-const checkListRouter = require('./src/routes/checklist')
+const checkListRouter = require('./src/routes/checklist');
+require('./config/databse');
 
 const app = express();
 app.use(express.json());
