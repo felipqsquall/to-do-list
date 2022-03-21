@@ -3,6 +3,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 
 const checkListRouter = require('./src/routes/checklist');
+const taskRouter = require('./src/routes/task');
 const rootRouter = require('./src/routes/index');
 require('./config/databse');
 
@@ -22,6 +23,8 @@ app.set('view engine', 'ejs');
 
 app.use('/', rootRouter);
 app.use('/checklists', checkListRouter);
+app.use('/checklists', taskRouter.checklistDependet);
+
 
 
 
