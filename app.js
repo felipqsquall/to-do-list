@@ -8,8 +8,6 @@ const rootRouter = require('./src/routes/index');
 require('./config/databse');
 
 
-
-
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -24,8 +22,7 @@ app.set('view engine', 'ejs');
 app.use('/', rootRouter);
 app.use('/checklists', checkListRouter);
 app.use('/checklists', taskRouter.checklistDependet);
-
-
+app.use('/tasks', taskRouter.simple);
 
 
 app.listen(3000, () => {
